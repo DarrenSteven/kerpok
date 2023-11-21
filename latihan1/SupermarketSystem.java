@@ -1,10 +1,10 @@
+package latihan1;
+
 class PurchaseException extends Exception {
     public PurchaseException(String message) {
         super(message);
     }
 }
-
-// testing
 
 public class SupermarketSystem {
     public int kodeBarang, hargaBeli, hargaJual;
