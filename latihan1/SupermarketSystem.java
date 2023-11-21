@@ -4,13 +4,16 @@ class PurchaseException extends Exception {
     }
 }
 
+// testing
+
 public class SupermarketSystem {
     public int kodeBarang, hargaBeli, hargaJual;
     public String namaBarang, gudang;
 
     public void processPurchase(int beli, int jual) throws PurchaseException {
         if (jual <= 0 && beli < 1) {
-            throw new PurchaseException("Terjadi Kesalahan: Harga jual harus lebih dari 0 dan jumlah pembelian minimal 1");
+            throw new PurchaseException(
+                    "Terjadi Kesalahan: Harga jual harus lebih dari 0 dan jumlah pembelian minimal 1");
         }
         System.out.println("Pembelian berhasil diproses.");
     }
