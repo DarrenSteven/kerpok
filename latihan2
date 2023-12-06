@@ -1,0 +1,44 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.sistem;
+
+/**
+ *
+ * @author User
+ */
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class latihan2 {
+    public static void main(String[] args) {
+        // Nama file yang akan dibaca
+        String fileName = "example.txt";
+
+        try {
+            // Membuka file untuk dibaca
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
+
+            // Membaca baris pertama dari file
+            String line = bufferedReader.readLine();
+            System.out.println("Isi file:");
+
+            // Membaca dan mencetak isi file baris per baris
+            while (line != null) {
+                System.out.println(line);
+                line = bufferedReader.readLine();
+            }
+
+            // Menutup file setelah selesai membaca
+            bufferedReader.close();
+        } catch (IOException e) {
+            System.err.println("Error saat membaca file: " + e.getMessage());
+        }
+    }
+}
+
+
+       

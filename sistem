@@ -1,0 +1,44 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.sistem;
+
+/**
+ *
+ * @author User
+ */
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class sistem {
+    public static void main(String[] args) {
+        // Nama file yang akan dibaca
+        String fileName = "example.txt";
+
+        try {
+            // Membuka file untuk dibaca
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
+
+            // Membaca baris pertama dari file
+            String line = bufferedReader.readLine();
+            System.out.println("Isi file:");
+
+            // Membaca dan mencetak isi file baris per baris
+            while (line != null) {
+                System.out.println(line);
+                line = bufferedReader.readLine();
+            }
+
+            // Menutup file setelah selesai membaca
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
+            System.err.println("File tidak ditemukan: " + fileName);
+        } catch (IOException e) {
+            System.err.println("Error saat membaca file: " + e.getMessage());
+        }
+    }
+}
+
